@@ -47,7 +47,6 @@ object TwoSum {
     def findMatchingValues(ar : Array[Int], tar : Int) : Array[Int] = {
         val result = 
         for {i <- 0 until nums.length
-            //j <- i+1 until nums.length
             if (nums.contains(target - nums(i)) && nums.indexOf(target - nums(i)) != i)
         } yield Array(i, nums.indexOf(target - nums(i)))
         result(0)
