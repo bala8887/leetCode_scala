@@ -73,3 +73,32 @@ Time Complexity : O(n2)
 Approach 2 : Sliding Window
 */
 
+object LengthOfLongestSubstring {
+    def deriveSolution(s: String): Int = {
+        
+        if (s.length == 2 && s(0) == s(1)) {
+            return 1
+        }
+        if (s.length <= 2) {
+            return s.length
+        }
+        var (i, j, max) = (0, 0, 0)
+        var substr : Array[String] = Array.empty
+        
+        while(i < s.length) {
+            while(substr.contains(s(i).toString)) {
+                println(substr.toString)
+                substr = substr.drop(1)
+                j += 1
+            }
+            substr = substr :+ s(i).toString
+            max = if (max > i-j+1) max else i-j+1
+            i += 1
+        }
+        max
+    }
+}
+
+/*
+Time Complexity : O(n)
+*/
