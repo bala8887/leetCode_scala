@@ -25,7 +25,7 @@ Output: false
 Example 5:
 Input: s = "{[]}"
 Output: true
-/*
+*/
 
 object ValidParantheses {
     def isValid(s: String): Boolean = {
